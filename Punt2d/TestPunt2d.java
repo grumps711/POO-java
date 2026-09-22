@@ -11,6 +11,7 @@ public class TestPunt2d {
 
         Punt2d punt1 = new Punt2d();
         Punt2d punt2 = new Punt2d();
+        Punt2d punt3 = new Punt2d();
 
         System.out.println("Escribe la coordenada x del primer punto:");
         punt1.x = scanner.nextDouble();
@@ -29,7 +30,10 @@ public class TestPunt2d {
         System.out.println("La distancia entre els dos punts és: " +punt1.distancia2punts(punt2));
 
 
-        
+
+        System.out.println("Punt 3 creat està a "+punt3+ "per defecte");
+
+
         scanner.close();
     }
         

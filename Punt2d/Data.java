@@ -10,7 +10,7 @@ public class Data {
 
     //constructor
     public Data(){
-    
+        
     }
 
     public Data(Data d){
