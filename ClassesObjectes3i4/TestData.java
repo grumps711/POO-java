@@ -1,4 +1,4 @@
-package Punt2d;
+package ClassesObjectes3i4;
 
 import java.util.Scanner;
 
@@ -11,12 +11,10 @@ public class TestData {
         Data d1 = new Data();
         Data d2 = new Data();
 
-        Data d3 = new Data();
-        Data d4 = new Data();
+        //Data d3 = new Data();
+        //Data d4 = new Data();
     
 
-
-        //test del primer metode
         System.out.println("Primera data:");
 
         System.out.print("Dia: ");
@@ -41,7 +39,10 @@ public class TestData {
         d2.setAny(scanner.nextInt());
 
 
+
+        //prova del mètode amb un objecte Data com a paràmetre
         int resultat = d1.anteriorPosteriorIgual(d2);
+
 
         if (resultat == -1) {
             
@@ -60,53 +61,23 @@ public class TestData {
             System.out.println("Les dues dates són iguals: " + d1);
         }
 
-        System.out.println("Provem segon mètode:");
-        System.out.println("Tercera data:");
 
-        System.out.print("Dia: ");
-        d3.setDia(scanner.nextInt());
-
-        System.out.print("Mes: ");
-        d3.setMes(scanner.nextInt());
-
-        System.out.print("Any: ");
-        d3.setAny(scanner.nextInt());
+        //prova del mètode sobrecarregat amb tres paràmetres
+        System.out.println("\nProvem el mètode sobrecarregat amb el dia, mes i any:");
 
 
-        System.out.println("Quarta data:");
+        int resultat2 = d1.anteriorPosteriorIgual(d2.getDia(), d2.getMes(), d2.getAny());
 
-        System.out.print("Dia: ");
-        d4.setDia(scanner.nextInt());
+        System.out.println("Resultat del mètode sobrecarregat: " + resultat2);
 
-        System.out.print("Mes: ");
-        d4.setMes(scanner.nextInt());
-
-        System.out.print("Any: ");
-        d4.setAny(scanner.nextInt());
-
-
-
-
-
-        int resultat2 = d3.anteriorPosteriorIgual(d4.dia, d4.mes, d4.any);
-
-        if (resultat2 == -1) {
-
-            System.out.println("Dates ordenades:");
-            System.out.println(d3);
-            System.out.println(d4);
-
-        } else if (resultat2 == 1) {
-
-            System.out.println("Dates ordenades:");
-            System.out.println(d4);
-            System.out.println(d3);
-
-        } else {
-
-            System.out.println("Les dues dates són iguals: " + d3);
-        }
         
+        
+        //prova del constructor de copia
+        Data d3 = new Data(d1);
+        
+        System.out.println("\nProva del constructor de copia:");
+        System.out.println("Data original (data1): " + d1);
+        System.out.println("Data copiada (data3): " + d3);
 
 
         scanner.close();

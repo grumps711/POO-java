@@ -1,18 +1,18 @@
-package Punt2d;
+package ClassesObjectes3i4;
 
 public class Data {
     
     //atributs
-    public int dia;
-    public int mes;
-    public int any;
+    private int dia;
+    private int mes;
+    private int any;
 
 
-    //constructor
+    //constructor sense paràmetres
     public Data(){
-        
     }
 
+    //constructor de copia
     public Data(Data d){
         this.dia = d.dia;
         this.mes = d.mes;
@@ -21,8 +21,7 @@ public class Data {
 
     
 
-    //getters and setters
-    
+    //getters i setters
     public int getDia() {
         return dia;
     }
@@ -48,7 +47,7 @@ public class Data {
     }
 
 
-    //metodes
+    //mètodes
 
     public int anteriorPosteriorIgual(Data d) {
 
@@ -79,9 +78,9 @@ public class Data {
         return 0;
     }
 
-    public String toString() {
-        return dia + "/" + mes + "/" + any;
-    }
+
+
+    //mateix mètode però sobrecarregat
 
     public int anteriorPosteriorIgual(int dia, int mes, int any){
 
@@ -111,5 +110,12 @@ public class Data {
 
         return 0;
     }
+
+
+    public String toString() {
+        return dia + "/" + mes + "/" + any;
+    }
+
+
 }
 
