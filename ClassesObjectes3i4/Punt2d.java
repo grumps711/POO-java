@@ -1,4 +1,4 @@
-package ClassesObjectes3i4;
+
 
 
 public class Punt2d {
@@ -21,8 +21,10 @@ public class Punt2d {
 
     //constructor de copia
     public Punt2d(Punt2d p){
-        this.x = p.x;
-        this.y = p.y;
+
+        this(p.getX(),p.getY());
+        //this.x = p.x;
+        //this.y = p.y;
     }
 
 
@@ -32,12 +34,12 @@ public class Punt2d {
         return x;
     }
 
-    public double getY() {
-        return y;
-    }
-
     public void setX(double x) {
         this.x = x;
+    }
+
+    public double getY() {
+        return y;
     }
 
     public void setY(double y) {
@@ -45,29 +47,24 @@ public class Punt2d {
     }
 
 
-
     //distancia X amb un Punt2d com a paràmetre
     public double distanciaX(Punt2d punt){
-
         return Math.abs(this.x - punt.x);
     }
 
     //distancia X amb una coordenada
     public double distanciaX(double x){
-
         return Math.abs(this.x - x);
     }
 
 
     //distancia Y amb un Punt2d com a paràmetre
     public double distanciaY(Punt2d punt){
-
         return Math.abs(this.y - punt.y);
     }
 
     //distancia Y amb una coordenada
     public double distanciaY(double y){
-
         return Math.abs(this.y - y);
     }
 
@@ -77,7 +74,6 @@ public class Punt2d {
         double distanciaX = this.distanciaX(punt);
         double distanciaY = this.distanciaY(punt);
 
-        //teorema de Pitàgores
         double suma = distanciaX * distanciaX + distanciaY * distanciaY;
 
         return Math.sqrt(suma);
@@ -87,21 +83,17 @@ public class Punt2d {
     //distancia entre 2 punts sobrecarregat amb coordenades com a paràmetres
     public double distanciaDosPunts(double x, double y){
 
-        //double distanciaX = Math.abs(this.x - x);
-        //double distanciaY = Math.abs(this.y - y);
-
         double distanciaX = this.distanciaX(x);
         double distanciaY = this.distanciaY(y);
         
-        //teorema de Pitàgores
         double suma = distanciaX * distanciaX + distanciaY * distanciaY;
 
         return Math.sqrt(suma);
     }
 
-
+    
     public String toString(){
-        return "(" + this.x + "," + this.y + ")";
+        return "(" + this.x + ", " + this.y + ")";
     }
 
 }

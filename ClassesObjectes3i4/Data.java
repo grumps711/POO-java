@@ -1,4 +1,4 @@
-package ClassesObjectes3i4;
+
 
 public class Data {
     
@@ -19,7 +19,11 @@ public class Data {
         this.any = d.any;
     }
 
-    
+    public Data(int dia, int mes, int any){
+        this.dia = dia;
+        this.mes = mes;
+        this.any = any;
+    }
 
     //getters i setters
     public int getDia() {
@@ -27,7 +31,9 @@ public class Data {
     }
 
     public void setDia(int dia) {
-        this.dia = dia;
+        if (dia>=1 && dia<=31){
+            this.dia = dia;
+        }
     }
 
     public int getMes() {
@@ -35,7 +41,9 @@ public class Data {
     }
 
     public void setMes(int mes) {
-        this.mes = mes;
+        if (mes>=1 && mes<=12){
+            this.mes = mes;
+        }
     }
 
     public int getAny() {
@@ -47,7 +55,7 @@ public class Data {
     }
 
 
-    //mètodes
+    //metode que compara dates amb Data com a parametre
 
     public int anteriorPosteriorIgual(Data d) {
 
@@ -80,35 +88,12 @@ public class Data {
 
 
 
-    //mateix mètode però sobrecarregat
+    //mateix mètode però sobrecarregat amb dia mes i any com a paràmetres
 
     public int anteriorPosteriorIgual(int dia, int mes, int any){
 
-        if (this.any < any) {
-            return -1;
-        }
-
-        if (this.any > any) {
-            return 1;
-        }
-
-        if (this.mes < mes) {
-            return -1;
-        }
-
-        if (this.mes > mes) {
-            return 1;
-        }
-
-        if (this.dia < dia) {
-            return -1;
-        }
-
-        if (this.dia > dia) {
-            return 1;
-        }
-
-        return 0;
+        Data d = new Data(dia,mes,any);
+        return this.anteriorPosteriorIgual(d);
     }
 
 

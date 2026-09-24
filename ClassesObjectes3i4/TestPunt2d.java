@@ -1,4 +1,3 @@
-package ClassesObjectes3i4;
 
 import java.util.Scanner;
 
@@ -18,7 +17,6 @@ public class TestPunt2d {
         punt1.setY(scanner.nextDouble());
 
 
-
         //prova del constructor amb coordenades com a paràmetres
         System.out.println("Escriu la coordenada x del segon punt:");
         double x = scanner.nextDouble();
@@ -33,23 +31,23 @@ public class TestPunt2d {
         System.out.println("Punt 2: " + punt2);
 
 
-
         //prova del constructor de copia
         Punt2d punt3 = new Punt2d(punt1);
 
-        System.out.println("Punt 3 creat com a copia dle punt1 està a " + punt3);
+        System.out.println("Punt 3 creat com a copia del punt1 està a " + punt3);
         
         
         //prova del mètode distanciaDosPunts amb un Punt2d com a paràmetre
+        System.out.println("\nProva del primer mètode");
         System.out.println("La distancia entre els dos punts és: " +punt1.distanciaDosPunts(punt2));
 
 
         //prova del mètode distanciaDosPunts amb coordenades com a paràmetres
+        System.out.println("\nProva del segon mètode");
         System.out.println("La distancia entre els dos punts és: " +punt1.distanciaDosPunts(x, y));
-
+        System.out.println("\n");
 
         
-
         scanner.close();
     }
         

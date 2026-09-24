@@ -1,4 +1,4 @@
-package ClassesObjectes3i4;
+
 
 import java.util.Scanner;
 
@@ -10,10 +10,7 @@ public class TestData {
 
         Data d1 = new Data();
         Data d2 = new Data();
-
-        //Data d3 = new Data();
-        //Data d4 = new Data();
-    
+  
 
         System.out.println("Primera data:");
 
