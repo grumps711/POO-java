@@ -1,15 +1,30 @@
+package ClassesObjectes5;
+
 public class Dibuix {
     
     private int color;
+    private Rectangle2D[] llistaRectangles2D;
+    private int nombreRectangles;
 
-    private Rectangle2D[] llistaRectangle2ds;
+
 
     //constructor
 
     public Dibuix(Rectangle2D[] llista, int color){
-        //copia rectangles a dibuix
+
         this.color= color;
-        this.llistaRectangle2ds = new Rectangle2D[];
+        this.llistaRectangles2D = new Rectangle2D[100];        //crea un array en la memòria
+
+        if (llista.length > 100) {
+            nombreRectangles = 100;
+        } else {
+            nombreRectangles = llista.length;
+        }
+
+        //copia rectangles paràmetre a rectangles dibuix
+        for (int i = 0; i < nombreRectangles; i++) {
+            this.llistaRectangles2D[i] = new Rectangle2D(llista[i]);
+        }
     }
 
 
@@ -23,12 +38,11 @@ public class Dibuix {
         return color;
     }
 
-    public Rectangle2D triaRectangle(Rectangle2D[] llista,int n){
-        return llista[n];
+    public Rectangle2D triaRectangle(int n){
+        return this.llistaRectangles2D[n];
     }
 
-    public int nombreRectangles(Dibuix d){
-        return d.llistaRectangle2ds.length;
+    public int getNombreRectangles(){
+        return nombreRectangles;
     }
-
 }
