@@ -39,18 +39,12 @@ public class EquipTemporada {
 
     public Jugador obtenirJugador(int dorsal){
 
-        for(int i=0; i<this.llistaJugadors.length; i++){
-
-            if(Jugador.getDorsal(i)==dorsal){
-                return Jugador;
-            }
-         }
+        return llistaJugadors[dorsal-1];
     }
 
 
 
     public void actualitzarPartitsJugats(int[] llistaDorsals){
-
 
         Jugador.setPartitsJugats()
     }
