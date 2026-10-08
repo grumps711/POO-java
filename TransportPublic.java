@@ -9,4 +9,8 @@ public class TransportPublic extends Vehiculo {
     public boolean potCircular(int hora, int ocupacio) {
        return true;
     }
+
+    public String toString() {
+        return "Tipo: TransportPublic\n" + super.toString();
+    }
 }

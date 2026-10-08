@@ -18,5 +18,9 @@ public class Carga extends Vehiculo {
             return permiso;
         }
     }
+
+    public String toString() {
+        return "Tipo: Carga\n" + super.toString() + "Permiso: " + permiso + "\n";
+    }
 }
 

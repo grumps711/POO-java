@@ -5,6 +5,8 @@ public class Turismo extends Vehiculo{
         super(matricula, numPlazas);
     }
 
+
+
     @Override
     public boolean potCircular(int hora, int ocupacio) {
         if (hora >= 22 || hora < 6) {
@@ -13,4 +15,9 @@ public class Turismo extends Vehiculo{
             return ocupacio >= getNumPlazas() * 0.5;
         }
     }
+
+    public String toString() {
+        return "Tipo: Turismo\n" + super.toString();
+    }
+
 }

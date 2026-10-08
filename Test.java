@@ -5,7 +5,7 @@ public class Test {
 		for(int i=0;i<24;i++){
 			for (int j=0;j<llista.length;j++){
 			    System.out.println(llista[j]);
-			    System.out.println("A las: "+i+"h"+ " con: "+ ocupacio + " pasajero. Pot circular?: "+llista[j].potCircular(i, ocupacio));
+			    System.out.println("A las: "+i+"h"+ " con: "+ ocupacio + " pasajeros. Pot circular?: "+llista[j].potCircular(i, ocupacio));
 			    System.out.println();
 			}
 		}		

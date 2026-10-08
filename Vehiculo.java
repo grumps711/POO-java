@@ -21,4 +21,8 @@ public class Vehiculo {
         return numPlazas;
     }
 
+    public String toString() {
+        return "Matricula: " + matricula + "\n" + "NumPlazas: " + numPlazas + "\n";
+    }
+
 }
