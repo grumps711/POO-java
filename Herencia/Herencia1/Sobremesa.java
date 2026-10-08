@@ -1,3 +1,4 @@
+package Herencia.Herencia1;
 public class Sobremesa extends Ordenador {
     
     private String tipoMonitor;

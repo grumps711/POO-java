@@ -1,3 +1,4 @@
+package Herencia.Herencia1;
 public class MainP1 {
 	public static void main(String[] args) {
 		Empleado empleats[] = {

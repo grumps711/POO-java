@@ -1,3 +1,4 @@
+package Herencia.Herencia1;
 public class EmpleadoConComplementoCategoria extends Empleado {
     
     private int salari;

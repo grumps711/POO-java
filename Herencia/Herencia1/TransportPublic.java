@@ -1,3 +1,4 @@
+package Herencia.Herencia1;
 public class TransportPublic extends Vehiculo {
     
 

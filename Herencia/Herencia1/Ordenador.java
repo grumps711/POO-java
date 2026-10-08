@@ -1,3 +1,4 @@
+package Herencia.Herencia1;
 public class Ordenador {
 	private String procesador;
 	private double velocidad;
