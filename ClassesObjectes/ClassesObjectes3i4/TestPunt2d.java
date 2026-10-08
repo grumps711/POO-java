@@ -1,8 +1,5 @@
-package ClassesObjectes3i4;
 
 import java.util.Scanner;
-
-import ClassesObjectes5.Punt2d;
 
 public class TestPunt2d {
 

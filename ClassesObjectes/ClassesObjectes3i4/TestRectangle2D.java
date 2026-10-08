@@ -1,9 +1,6 @@
-package ClassesObjectes3i4;
+
 
 import java.util.Scanner;
-
-import ClassesObjectes5.Punt2d;
-import ClassesObjectes5.Rectangle2D;
 
 public class TestRectangle2D {
 

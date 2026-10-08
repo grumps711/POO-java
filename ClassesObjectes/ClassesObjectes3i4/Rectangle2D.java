@@ -1,4 +1,3 @@
-package ClassesObjectes5;
 
 
 public class Rectangle2D {
@@ -58,6 +57,7 @@ public class Rectangle2D {
         
         return costatX*2 + costatY*2;
     }
+
 
 
 

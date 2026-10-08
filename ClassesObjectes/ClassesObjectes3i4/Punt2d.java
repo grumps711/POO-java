@@ -1,4 +1,3 @@
-package ClassesObjectes5;
 
 
 
@@ -6,6 +5,7 @@ public class Punt2d {
     
     private double x;
     private double y;
+
 
     //constructor sense paràmetres
     public Punt2d(){
@@ -21,6 +21,7 @@ public class Punt2d {
 
     //constructor de copia
     public Punt2d(Punt2d p){
+
         this(p.getX(),p.getY());
         //this.x = p.x;
         //this.y = p.y;
