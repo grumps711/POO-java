@@ -1,3 +1,5 @@
+package Herencia.Herencia1ClassesTaules;
+
 
 public class PruebaSocios {
 
