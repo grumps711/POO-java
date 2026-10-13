@@ -16,7 +16,7 @@ public class Carga extends Vehiculo {
         if (hora >= 22 || hora < 6) {
             return true;
         } else {
-            return permiso;
+            return false;
         }
     }
 
@@ -24,4 +24,3 @@ public class Carga extends Vehiculo {
         return "Tipo: Carga\n" + super.toString() + "Permiso: " + permiso + "\n";
     }
 }
-

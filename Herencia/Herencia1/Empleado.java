@@ -16,7 +16,8 @@ public class Empleado extends Persona {
         this.salari = salari;
     }
 
+    //RECORDA AQUI!! NO TORNIS EL ATRIBUT TALCUAL HAS DE RETORNAR GETTER!!
     public double nominaMensual() {
-        return salari;
+        return getSalari();
     }
 }

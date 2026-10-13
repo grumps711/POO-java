@@ -7,7 +7,6 @@ public class Turismo extends Vehiculo{
     }
 
 
-
     @Override
     public boolean potCircular(int hora, int ocupacio) {
         if (hora >= 22 || hora < 6) {
@@ -17,6 +16,7 @@ public class Turismo extends Vehiculo{
         }
     }
 
+    //aixo esta malament
     public String toString() {
         return "Tipo: Turismo\n" + super.toString();
     }

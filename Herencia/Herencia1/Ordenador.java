@@ -4,7 +4,7 @@ public class Ordenador {
 	private double velocidad;
 	private int RAM;
 
-  
+
 	public Ordenador(String procesador, double velocidad, int RAM) {
 		this.procesador = procesador;
 		this.velocidad = velocidad;
@@ -12,9 +12,7 @@ public class Ordenador {
 	}
 
 	public Ordenador(Ordenador o) {
-		this.procesador = o.procesador;
-		this.velocidad = o.velocidad;
-		this.RAM = o.RAM;
+		this(o.procesador, o.velocidad, o.RAM);			//OJO AMB AIXÓ!! ÉS IMPORTANT!!
 	}
 
 	public String getProcesador() {
@@ -40,14 +38,9 @@ public class Ordenador {
 	public void setRAM(int RAM) {
 		this.RAM = RAM;
 	}
-	
-
 
 	public String toString(){
-		return "Procesador: " + procesador + "\n" +
-				"Velocidad: " + velocidad + " GHz" + "\n" +
-				"Memoria RAM: " + RAM + " MB" + "\n";
+		return "Procesador: " + procesador + "\n" + "Velocidad: " + velocidad + " GHz" + "\n" + "Memoria RAM: " + RAM + " MB" + "\n";
 	}
-	
 
 }
