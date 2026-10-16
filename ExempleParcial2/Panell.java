@@ -1,4 +1,4 @@
-package Parcial2;
+package ExempleParcial2;
 
 //Es vol desenvolupar una aplicació per gestionar un panell marcador pels resultats de les travesses. 
 

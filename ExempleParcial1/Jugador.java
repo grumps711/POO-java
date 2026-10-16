@@ -1,4 +1,4 @@
-package Parcial;
+package ExempleParcial1;
 
 public class Jugador {
     
