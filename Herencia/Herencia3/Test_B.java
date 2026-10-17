@@ -5,7 +5,7 @@ public class Test_B {
 			Canco[] tendapps=new Canco[3];
 			tendapps[0]=new Canco("La-La-La", "Masiel", 0.32);
 			tendapps[1]=new Canco("La vida es una tombola", "Marisol", 0.40);
-			tendapps[2]=new Canco("Vivir así", "Camilo Sesto", 0.5);
+			tendapps[2]=new Canco("Vivir asï¿½", "Camilo Sesto", 0.5);
 			
 			for (Canco app:tendapps){
 				System.out.println(app);

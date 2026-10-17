@@ -75,7 +75,6 @@ public class Sensor {
 
         Random r= new Random();  
         double valor= r.nextDouble()*(getLimMax()-getLimMin())+getLimMin();
-
         Medicio m = new Medicio(valor);
         
         if(mesuresFetes >= mesuresMax){//**************************************** revisar abans de generar mesura

@@ -1,23 +1,19 @@
+
+
+
 public class Localitzacio {
-    
-    //atributs
 
     private String nomMesurament;
     private double latitud;
     private double longitud;
     private double altura;
 
-    //constructor
-
-    public Localitzacio(String nom, double latitud,double longitud, int alt){
-
+    public Localitzacio(String nom, double latitud, double longitud, double altura) {
         this.nomMesurament = nom;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.altura = alt;
+        this.altura = altura;
     }
-
-    //getters i setters
 
     public String getNomMesurament() {
         return nomMesurament;
@@ -51,5 +47,9 @@ public class Localitzacio {
         this.altura = altura;
     }
 
-
+    @Override
+    public String toString() {
+        return "Localitzacio{nom='" + nomMesurament + "', latitud=" + latitud
+                + ", longitud=" + longitud + ", altura=" + altura + "}";
+    }
 }
