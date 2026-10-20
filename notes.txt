@@ -1,0 +1,5 @@
+si passes un objecte a un metode fer una comprobació amb si es null siempre
+
+mirar si la classe pare s'haurà de instanciar en algun moment, si no pues posar abstract
+
+els Strings no es posa == es posa .equals()
