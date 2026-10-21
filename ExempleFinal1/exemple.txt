@@ -1,0 +1,8 @@
+InstalacionDeportiva
+    id 
+    nombre  
+
+
+
+
+

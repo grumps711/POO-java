@@ -1,5 +1,33 @@
 si passes un objecte a un metode fer una comprobació amb si es null siempre
 
 mirar si la classe pare s'haurà de instanciar en algun moment, si no pues posar abstract
+RECORDAR AIXÓ, CLASSE PARE ES POSA ABSTRACT
 
 els Strings no es posa == es posa .equals()
+
+
+si pones altamiembro y bajamiembro entonces no pongas un setnumeromiembros
+
+
+si te hace calcular un porcentaje mejor *0.15 
+si te hace incrementar tal cosa un 15% pues le haces *1.15
+
+
+el tema de las listas, tu creas una lista en el constructor antes de volcarle el contenido pasado:
+this.nombreQueYoHePuestoListaAtributo = new NOMBREDECLASE/TIPO[maximo a poner]
+y luego con un for vuelcas lo pasado por parametro a tu lista "this.nombreQueYoHePuestoListaAtributo"
+
+
+
+para añadir un objeto dentro de una lista (al final de la lista):
+nombreLista[numObjetosEnLaLista++] = objetoAPonerEnFInalLista
+
+En una interfaz se pone los nombres de los metodos asi y ya esta:
+public int calcularTotalPublico();
+
+
+te piden una clase para comprobar otra clase/interface
+"que permita gestionar todos los ..."
+la creas y pones atributo lista de lo que se quiere gestionar
+
+Una interface puede ser una clase padre, se puede instanciar.
