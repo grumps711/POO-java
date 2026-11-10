@@ -1,7 +1,14 @@
+import java.awt.Font;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import java.awt.Color;
 
 public class VentanaCalculadora extends JFrame{
     
+    private JTextField pantalla;
 
     public VentanaCalculadora() {
         super("Calculadora");
@@ -13,6 +20,28 @@ public class VentanaCalculadora extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocation(1000,500);
         this.setResizable(false);
+
+   
+        JPanel panelPrincipal = new JPanel(new BorderLayout());
+        panelPrincipal.add(crearPanelDisplay(), BorderLayout.NORTH);
+        this.setContentPane(panelPrincipal);
+
+    }
+
+    private JPanel crearPanelDisplay() {
+
+        JPanel panelDisplay = new JPanel();
+        JTextField cuadroTexto = new JTextField(10);
+
+        cuadroTexto.setText("0");
+        cuadroTexto.setEditable(false);
+        cuadroTexto.setHorizontalAlignment(JTextField.RIGHT);
+        cuadroTexto.setFont(new Font("Arial", Font.BOLD, 25));
+        cuadroTexto.setBackground(Color.WHITE);
+        cuadroTexto.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
+        panelDisplay.add(cuadroTexto);
+
+        return panelDisplay;
     }
 
 
