@@ -27,7 +27,7 @@ public class VentanaCalculadora extends JFrame{
     }
 
     private void init() {
-        this.setSize(230, 230);
+        this.setSize(240, 240);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocation(1000,500);
         this.setResizable(false);
@@ -94,8 +94,8 @@ public class VentanaCalculadora extends JFrame{
         JButton botonDos = botonesNumeros[2]; 
         JButton botonTres = botonesNumeros[3]; 
         JButton botonCero = botonesNumeros[0];
-
-        panelNumeros.add(botonSiete);
+        
+        panelNumeros.add(botonesNumeros[7]);
         panelNumeros.add(botonOcho);
         panelNumeros.add(botonNueve);
         panelNumeros.add(botonDivision);
