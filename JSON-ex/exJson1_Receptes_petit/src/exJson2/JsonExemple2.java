@@ -12,17 +12,17 @@ import java.util.Scanner;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-
 public class JsonExemple2 {
 
-		public static void main(String[] args)  throws IOException {
-			URL font = new URL("https://www.cs.upc.edu/~jmarco/recetas.json");
-		    BufferedReader in = new BufferedReader(new InputStreamReader(font.openStream()));		     
+	public static void main(String[] args) throws IOException {
+		URL font = new URL("https://www.cs.upc.edu/~jmarco/recetas.json");
+		BufferedReader in = new BufferedReader(new InputStreamReader(font.openStream()));
 
-			Type listType = new TypeToken<List<Receta>>() {}.getType();
-			Gson gson = new Gson();
-			List<Receta> l = gson.fromJson(in,listType);
-			System.out.println(l);
+		Type listType = new TypeToken<List<Receta>>() {
+		}.getType();
+		Gson gson = new Gson();
+		List<Receta> l = gson.fromJson(in, listType);
+		System.out.println(l);
 
 	}
 
