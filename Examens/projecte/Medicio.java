@@ -1,4 +1,4 @@
-package Examens.Parcial.EntregaParcialCorregit;
+package projecte;
 
 import java.time.LocalDateTime;
 
