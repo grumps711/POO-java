@@ -1,3 +1,4 @@
+package refugis;
 import javax.swing.SwingUtilities;
 
 public class AplicacioRefugisClimatics {
