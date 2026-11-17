@@ -5,14 +5,10 @@ public class RefugiClimatic {
 
     @SerializedName("nom")
     private String titol;
-
     private String municipi;
-
     @SerializedName("tipologia")
     private String tipologiaRefugi;
-
     private String adreca;
-
     @SerializedName("aigua")
     private String aiguaPotable;
 
