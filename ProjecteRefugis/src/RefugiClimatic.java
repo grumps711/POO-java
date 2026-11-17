@@ -3,6 +3,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class RefugiClimatic {
 
+    // Correspondencia entre los camps del JSON i els atributs Java
     @SerializedName("nom")
     private String titol;
     private String municipi;
@@ -46,7 +47,7 @@ public class RefugiClimatic {
     public String toString() {
         return titol + " [" + tipologiaRefugi + "]" +
             "\n   " + municipi + " · " + adreca +
-            "\n   Aigua potable: " + aiguaPotable + "\n";
+            "\n   Aigua potable: " + aiguaPotable;
     }
 
 }
