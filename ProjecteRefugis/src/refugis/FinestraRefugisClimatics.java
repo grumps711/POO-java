@@ -3,6 +3,8 @@ package refugis;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -43,6 +45,8 @@ public class FinestraRefugisClimatics extends JFrame {
 
         panelPrincipal.add(crearPanelInfo(), BorderLayout.NORTH);
         panelPrincipal.add(crearPanelBotones(), BorderLayout.SOUTH);
+
+        addOyentesBotones();
 
         this.setContentPane(panelPrincipal);
     }
@@ -93,4 +97,28 @@ public class FinestraRefugisClimatics extends JFrame {
 
         return panelBotones;
     }
+
+
+    private void addOyentesBotones() {
+
+        botonC.addActionListener(new ActionListener() {  //registra un oyente en el botón Clear!
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetearFormulario();       //metodo que hará el botón Clear!
+            }
+        });
+    }
+
+
+    private void resetearFormulario() {
+
+        campoNom.setText("");
+        campoTipologia.setText("");
+        campoMunicipi.setText("");
+        campoAdreca.setText("");
+        campoAigua.setText("");
+    }
+
+
 }
