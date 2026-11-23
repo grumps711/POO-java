@@ -17,6 +17,8 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+//Modelo: Mantener los refugios y realizar búsquedas.
+
 public class LlistaRefugis implements Serializable{
 
 

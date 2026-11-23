@@ -13,7 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class FinestraRefugisClimatics extends JFrame {
+//Vista: Es lo que el usuario ve y utiliza para pedir algo. (ventanas, botones, campos de texto.)
+
+public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
 
     // Botones de la ventana
     private JButton botonC;
@@ -110,8 +112,8 @@ public class FinestraRefugisClimatics extends JFrame {
         });
     }
 
-
-    private void resetearFormulario() {
+    @Override
+    public void resetearFormulario() {
 
         campoNom.setText("");
         campoTipologia.setText("");
@@ -120,5 +122,10 @@ public class FinestraRefugisClimatics extends JFrame {
         campoAigua.setText("");
     }
 
+
+    @Override
+    public void addOyenteResetear(ActionListener listener) {
+        botonC.addActionListener(listener);
+    }
 
 }

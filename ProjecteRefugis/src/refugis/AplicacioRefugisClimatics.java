@@ -1,3 +1,4 @@
+
 package refugis;
 
 import java.io.IOException;
@@ -7,9 +8,10 @@ public class AplicacioRefugisClimatics {
 
     public static void main(String[] args) {
 
-        // Carreguem els refugis des del JSON o del fitxer serialitzat
+        LlistaRefugis refugis;
+
         try {
-            LlistaRefugis refugis = LlistaRefugis.carregar();
+            refugis = LlistaRefugis.carregar();
             refugis.mostrarPrimers(5);
 
         } catch (IOException | ClassNotFoundException e) {
@@ -17,10 +19,10 @@ public class AplicacioRefugisClimatics {
             return;
         }
 
-        // Iniciem la interfície gràfica
         SwingUtilities.invokeLater(() -> {
-            FinestraRefugisClimatics finestra = new FinestraRefugisClimatics();
-            finestra.setVisible(true);
+            VistaRefugis vista = new FinestraRefugisClimatics();
+            new ControladorRefugis(vista, refugis);
+            vista.setVisible(true);
         });
     }
 }
