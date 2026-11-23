@@ -1,8 +1,9 @@
 package refugis;
 
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-public class RefugiClimatic {
+public class RefugiClimatic implements Serializable{
 
     // Correspondencia entre los camps del JSON i els atributs Java
     @SerializedName("nom")
@@ -13,6 +14,8 @@ public class RefugiClimatic {
     private String adreca;
     @SerializedName("aigua")
     private String aiguaPotable;
+
+    private static final long serialVersionUID = 1L;
 
     public RefugiClimatic(String titol, String municipi, String tipologiaRefugi, String adreca, String aiguaPotable) {
 
