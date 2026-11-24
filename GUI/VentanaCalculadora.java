@@ -1,5 +1,6 @@
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -9,7 +10,7 @@ import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-public class VentanaCalculadora extends JFrame{
+public class VentanaCalculadora extends JFrame implements VistaCalculadora{
     
     private JTextField pantalla;
     private JButton botonC;
@@ -44,15 +45,18 @@ public class VentanaCalculadora extends JFrame{
     private JPanel crearPanelDisplay() {
 
         JPanel panelDisplay = new JPanel();
-        JTextField cuadroTexto = new JTextField(10);
 
-        cuadroTexto.setText("0");
-        cuadroTexto.setEditable(false);
-        cuadroTexto.setHorizontalAlignment(JTextField.RIGHT);
-        cuadroTexto.setFont(new Font("Arial", Font.BOLD, 25));
-        cuadroTexto.setBackground(Color.WHITE);
-        cuadroTexto.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY, 1, true));
-        panelDisplay.add(cuadroTexto);
+        pantalla = new JTextField(10);
+
+        pantalla.setText("0");
+        pantalla.setEditable(false);
+        pantalla.setHorizontalAlignment(JTextField.RIGHT);
+        pantalla.setFont(new Font("Arial", Font.BOLD, 25));
+        pantalla.setBackground(Color.WHITE);
+        pantalla.setBorder(BorderFactory.createLineBorder(
+            Color.LIGHT_GRAY, 1, true));
+
+        panelDisplay.add(pantalla);
 
         return panelDisplay;
     }
@@ -116,6 +120,56 @@ public class VentanaCalculadora extends JFrame{
         panelNumeros.add(botonSuma);
 
         return panelNumeros;
+    }
+
+    @Override
+    public void setDisplay(String s) {
+        this.pantalla.setText(s);
+    }
+
+    @Override
+    public String getDisplay() {
+        return this.pantalla.getText();
+    }
+
+    @Override
+    public void addOyenteTeclaDigito(int digito, ActionListener l) {
+       botonesNumeros[digito].addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaDecimal(ActionListener l) {
+       botonPuntoDecimal.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaMas(ActionListener l) {
+        botonSuma.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaMenos(ActionListener l) {
+      botonResta.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaPor(ActionListener l) {
+        botonMultiplicacion.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaDiv(ActionListener l) {
+       botonDivision.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaIgual(ActionListener l) {
+       botonIgual.addActionListener(l);
+    }
+
+    @Override
+    public void addOyenteTeclaClear(ActionListener l) {
+       botonC.addActionListener(l);
     }
 
 
