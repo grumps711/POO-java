@@ -29,6 +29,8 @@ public class LlistaRefugis implements Serializable{
     private static final long serialVersionUID = 1L;
     private static final String FITXER_SER = "refugis.ser";
 
+
+
     public LlistaRefugis() {
         this.llista = new ArrayList<RefugiClimatic>();
     }
@@ -94,6 +96,10 @@ public class LlistaRefugis implements Serializable{
         return refugis;
     }
 
+
+    public void altaRefugiClimatic(RefugiClimatic refugi) {
+        llista.add(refugi);
+    }
 
 
 

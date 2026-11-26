@@ -1,0 +1,163 @@
+Carrega inicial:
+// Un objecte de cadascun dels quatre subtipus.
+        EstacioRecarrega[] estacions = {
+        		new ACConvencional("AC01", "AC convencional", "Terrassa",
+                        new PuntRecarrega[] {
+                            new PuntRecarrega("AC01-P1", 50, true),
+                            new PuntRecarrega("AC01-P2", 22, false)
+                        }, 0.20),
+                    new ACSemirapida("AC02", "AC semirapida", "Sabadell",
+                        new PuntRecarrega[] {
+                            new PuntRecarrega("AC02-P1", 50,true),
+                            new PuntRecarrega("AC02-P2", 11, false)
+                        }, 0.20),
+                    new DCRapida("DC01", "DC rapida", "Barcelona",
+                        new PuntRecarrega[] {
+                            new PuntRecarrega("DC01-P1", 50, true),
+                            new PuntRecarrega("DC01-P2", 100, false)
+                        }, 0.20),
+                    new DCUltrarapida("DC02", "DC ultrarapida", "Girona",
+                        new PuntRecarrega[] {
+                            new PuntRecarrega("DC02-P1", 50, true),
+                            new PuntRecarrega("DC02-P2", 150, false)
+                        }, 0.20)
+        };
+
+
+
+Sortida:
+
+========== PROBLEMA 1: ESTACIONS ==========
+Energia sol.licitada: 10.0 kWh
+
+-------------------------------------------
+Subtipus: ACConvencional
+toString(): ACConvencional{codi='AC01', nom='AC convencional', ubicacio='Terrassa', punts=[PuntRecarrega{AC01-P1, 50.0 kW, operatiu=true}, PuntRecarrega{AC01-P2, 22.0 kW, operatiu=false}], preuBaseKWh=0.2}
+getCodi(): AC01
+getNom(): AC convencional
+getUbicacio(): Terrassa
+getPreuBaseKWh(): 0.2
+getNombrePunts(): 2
+getNombrePuntsOperatius(): 1
+getPunts():
+  PuntRecarrega{AC01-P1, 50.0 kW, operatiu=true}
+    getIdentificador(): AC01-P1
+    getPotenciaKW(): 50.0
+    isOperatiu(): true
+  PuntRecarrega{AC01-P2, 22.0 kW, operatiu=false}
+    getIdentificador(): AC01-P2
+    getPotenciaKW(): 22.0
+    isOperatiu(): false
+buscarPunt(existent): PuntRecarrega{AC01-P1, 50.0 kW, operatiu=true}
+buscarPunt(inexistent): null
+calcularTemps(AC01-P1, 10,0): 13,200 min
+calcularCost(AC01-P1, 10,0): 2,500 EUR
+calcularTemps(punt inoperatiu): -1.0
+calcularCost(punt inoperatiu): -1.0
+calcularTemps(energia 0): -1.0
+calcularCost(punt inexistent): -1.0
+ModificaEstat(inoperatiu, true): true
+getNombrePuntsOperatius() despres: 2
+ModificaEstat(inexistent, true): false
+equals(mateixa referencia): true
+equals(estacio diferent): false
+Despres dels setters -> nom: AC convencional (actualitzada), ubicacio: Terrassa - centre, preu: 0.25
+
+-------------------------------------------
+Subtipus: ACSemirapida
+toString(): ACSemirapida{codi='AC02', nom='AC semirapida', ubicacio='Sabadell', punts=[PuntRecarrega{AC02-P1, 50.0 kW, operatiu=true}, PuntRecarrega{AC02-P2, 11.0 kW, operatiu=false}], preuBaseKWh=0.2}
+getCodi(): AC02
+getNom(): AC semirapida
+getUbicacio(): Sabadell
+getPreuBaseKWh(): 0.2
+getNombrePunts(): 2
+getNombrePuntsOperatius(): 1
+getPunts():
+  PuntRecarrega{AC02-P1, 50.0 kW, operatiu=true}
+    getIdentificador(): AC02-P1
+    getPotenciaKW(): 50.0
+    isOperatiu(): true
+  PuntRecarrega{AC02-P2, 11.0 kW, operatiu=false}
+    getIdentificador(): AC02-P2
+    getPotenciaKW(): 11.0
+    isOperatiu(): false
+buscarPunt(existent): PuntRecarrega{AC02-P1, 50.0 kW, operatiu=true}
+buscarPunt(inexistent): null
+calcularTemps(AC02-P1, 10,0): 13,200 min
+calcularCost(AC02-P1, 10,0): 2,200 EUR
+calcularTemps(punt inoperatiu): -1.0
+calcularCost(punt inoperatiu): -1.0
+calcularTemps(energia 0): -1.0
+calcularCost(punt inexistent): -1.0
+ModificaEstat(inoperatiu, true): true
+getNombrePuntsOperatius() despres: 2
+ModificaEstat(inexistent, true): false
+equals(mateixa referencia): true
+equals(estacio diferent): false
+Despres dels setters -> nom: AC semirapida (actualitzada), ubicacio: Sabadell - centre, preu: 0.25
+
+-------------------------------------------
+Subtipus: DCRapida
+toString(): DCRapida{codi='DC01', nom='DC rapida', ubicacio='Barcelona', punts=[PuntRecarrega{DC01-P1, 50.0 kW, operatiu=true}, PuntRecarrega{DC01-P2, 100.0 kW, operatiu=false}], preuBaseKWh=0.2}
+getCodi(): DC01
+getNom(): DC rapida
+getUbicacio(): Barcelona
+getPreuBaseKWh(): 0.2
+getNombrePunts(): 2
+getNombrePuntsOperatius(): 1
+getPunts():
+  PuntRecarrega{DC01-P1, 50.0 kW, operatiu=true}
+    getIdentificador(): DC01-P1
+    getPotenciaKW(): 50.0
+    isOperatiu(): true
+  PuntRecarrega{DC01-P2, 100.0 kW, operatiu=false}
+    getIdentificador(): DC01-P2
+    getPotenciaKW(): 100.0
+    isOperatiu(): false
+buscarPunt(existent): PuntRecarrega{DC01-P1, 50.0 kW, operatiu=true}
+buscarPunt(inexistent): null
+calcularTemps(DC01-P1, 10,0): 12,600 min
+calcularCost(DC01-P1, 10,0): 2,630 EUR
+calcularTemps(punt inoperatiu): -1.0
+calcularCost(punt inoperatiu): -1.0
+calcularTemps(energia 0): -1.0
+calcularCost(punt inexistent): -1.0
+ModificaEstat(inoperatiu, true): true
+getNombrePuntsOperatius() despres: 2
+ModificaEstat(inexistent, true): false
+equals(mateixa referencia): true
+equals(estacio diferent): false
+Despres dels setters -> nom: DC rapida (actualitzada), ubicacio: Barcelona - centre, preu: 0.25
+
+-------------------------------------------
+Subtipus: DCUltrarapida
+toString(): DCUltrarapida{codi='DC02', nom='DC ultrarapida', ubicacio='Girona', punts=[PuntRecarrega{DC02-P1, 50.0 kW, operatiu=true}, PuntRecarrega{DC02-P2, 150.0 kW, operatiu=false}], preuBaseKWh=0.2}
+getCodi(): DC02
+getNom(): DC ultrarapida
+getUbicacio(): Girona
+getPreuBaseKWh(): 0.2
+getNombrePunts(): 2
+getNombrePuntsOperatius(): 1
+getPunts():
+  PuntRecarrega{DC02-P1, 50.0 kW, operatiu=true}
+    getIdentificador(): DC02-P1
+    getPotenciaKW(): 50.0
+    isOperatiu(): true
+  PuntRecarrega{DC02-P2, 150.0 kW, operatiu=false}
+    getIdentificador(): DC02-P2
+    getPotenciaKW(): 150.0
+    isOperatiu(): false
+buscarPunt(existent): PuntRecarrega{DC02-P1, 50.0 kW, operatiu=true}
+buscarPunt(inexistent): null
+calcularTemps(DC02-P1, 10,0): 12,600 min
+calcularCost(DC02-P1, 10,0): 3,749 EUR
+calcularTemps(punt inoperatiu): -1.0
+calcularCost(punt inoperatiu): -1.0
+calcularTemps(energia 0): -1.0
+calcularCost(punt inexistent): -1.0
+ModificaEstat(inoperatiu, true): true
+getNombrePuntsOperatius() despres: 2
+ModificaEstat(inexistent, true): false
+equals(mateixa referencia): true
+equals(estacio diferent): false
+Despres dels setters -> nom: DC ultrarapida (actualitzada), ubicacio: Girona - centre, preu: 0.25

@@ -12,6 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
 
 //Vista: Es lo que el usuario ve y utiliza para pedir algo. (ventanas, botones, campos de texto.)
 
@@ -28,30 +32,41 @@ public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
     private JTextField campoAdreca;
     private JTextField campoAigua;
 
+    private JPanel panelAlta;
+
     public FinestraRefugisClimatics() {
         super("App Refugis Climatics");
         this.init();
     }
 
+    
     private void init() {
 
-        // Configuracion de la ventana
-        this.setSize(500, 400);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+        setSize(500, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
-        // Panel principal que organiza toda la ventana
         JPanel panelPrincipal = new JPanel(new BorderLayout());
 
-        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        panelPrincipal.setBorder(
+            BorderFactory.createEmptyBorder(15, 15, 15, 15)
+        );
 
-        panelPrincipal.add(crearPanelInfo(), BorderLayout.NORTH);
-        panelPrincipal.add(crearPanelBotones(), BorderLayout.SOUTH);
+        // Contenidor del formulari d'alta
+        panelAlta = new JPanel(new BorderLayout());
 
-        addOyentesBotones();
+        panelAlta.add(crearPanelInfo(), BorderLayout.NORTH);
+        panelAlta.add(crearPanelBotones(), BorderLayout.SOUTH);
 
-        this.setContentPane(panelPrincipal);
+        // Inicialment el formulari està ocult
+        panelAlta.setVisible(false);
+
+        panelPrincipal.add(panelAlta, BorderLayout.CENTER);
+
+        setContentPane(panelPrincipal);
+        setJMenuBar(crearMenuBar());
     }
+
 
     private JPanel crearPanelInfo() {
 
@@ -101,6 +116,33 @@ public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
     }
 
 
+    private JMenuBar crearMenuBar() {
+
+        JMenuBar menuBar = new JMenuBar();
+
+        JMenu menuRefugis = new JMenu("Refugis");
+
+        JMenuItem itemAlta = new JMenuItem("Alta");
+        JMenuItem itemCerca = new JMenuItem("Cerca");
+
+        itemAlta.addActionListener(e -> {
+            panelAlta.setVisible(true);
+            campoNom.requestFocusInWindow();
+        });
+
+        // Encara no hem implementat la cerca
+        itemCerca.setEnabled(false);
+
+        menuRefugis.add(itemAlta);
+        menuRefugis.add(itemCerca);
+
+        menuBar.add(menuRefugis);
+
+        return menuBar;
+    }
+
+
+
     private void addOyentesBotones() {
 
         botonC.addActionListener(new ActionListener() {  //registra un oyente en el botón Clear!
@@ -112,9 +154,40 @@ public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
         });
     }
 
+
+    @Override
+    public void addOyenteResetear(ActionListener listener) {
+        botonC.addActionListener(listener);
+    }
+
+
+    @Override
+    public String getNom() {
+        return campoNom.getText();
+    }
+
+    @Override
+    public String getMunicipi() {
+        return campoMunicipi.getText();
+    }
+
+    @Override
+    public String getTipologia() {
+        return campoTipologia.getText();
+    }
+
+    @Override
+    public String getAdreca() {
+        return campoAdreca.getText();
+    }
+
+    @Override
+    public String getAiguaPotable() {
+        return campoAigua.getText();
+    }
+
     @Override
     public void resetearFormulario() {
-
         campoNom.setText("");
         campoTipologia.setText("");
         campoMunicipi.setText("");
@@ -122,10 +195,10 @@ public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
         campoAigua.setText("");
     }
 
-
     @Override
-    public void addOyenteResetear(ActionListener listener) {
-        botonC.addActionListener(listener);
+    public void addOyenteAlta(ActionListener listener) {
+        botonOk.addActionListener(listener);
     }
+
 
 }

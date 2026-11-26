@@ -14,6 +14,8 @@ public class RefugiClimatic implements Serializable{
     private String adreca;
     @SerializedName("aigua")
     private String aiguaPotable;
+    @SerializedName("indicador_refugi")
+    private String identificador;
 
     private static final long serialVersionUID = 1L;
 
@@ -24,6 +26,13 @@ public class RefugiClimatic implements Serializable{
         this.tipologiaRefugi = tipologiaRefugi;
         this.adreca = adreca;
         this.aiguaPotable = aiguaPotable;
+    }
+
+    public RefugiClimatic(String identificador, String titol,String municipi, String tipologiaRefugi,
+        String adreca, String aiguaPotable) {
+
+        this(titol, municipi, tipologiaRefugi, adreca, aiguaPotable);
+        this.identificador = identificador;
     }
 
     public String getTitol() {
@@ -46,6 +55,9 @@ public class RefugiClimatic implements Serializable{
         return aiguaPotable;
     }
 
+    public String getIdentificador() {
+        return identificador;
+    }
 
     @Override
     public String toString() {
@@ -53,5 +65,7 @@ public class RefugiClimatic implements Serializable{
             "\n   " + municipi + " · " + adreca +
             "\n   Aigua potable: " + aiguaPotable;
     }
+
+ 
 
 }

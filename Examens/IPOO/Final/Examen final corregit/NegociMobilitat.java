@@ -2,7 +2,9 @@ import java.util.Arrays;
 
 public class NegociMobilitat {
 
-    private static final int MAX_SERVEIS = 50;
+    private static int MAX_SERVEIS = 50;
+
+
     private ServeiMobilitat[] llistaServeis;
     private int numeroServeis;
 
@@ -35,7 +37,9 @@ public class NegociMobilitat {
     }
 
     public ServeiMobilitat obtenirMaxServeiIngressosMensuals() {
-        if (numeroServeis == 0) return null;
+        if (numeroServeis == 0) {
+            return null;
+        }
         ServeiMobilitat serveiMaxIngressos = llistaServeis[0];
         for (int i = 1; i < numeroServeis; i++) {
             if (llistaServeis[i].getIngressosMensuals() > serveiMaxIngressos.getIngressosMensuals()) {
@@ -43,6 +47,14 @@ public class NegociMobilitat {
             }
         }
         return serveiMaxIngressos;
+    }
+
+    public static int getMAX_SERVEIS() {
+        return MAX_SERVEIS;
+    }
+
+    public static void setMAX_SERVEIS(int MAX_SERVEIS) {
+        NegociMobilitat.MAX_SERVEIS = MAX_SERVEIS;
     }
 
     @Override

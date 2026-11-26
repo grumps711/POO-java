@@ -12,16 +12,19 @@ public class AplicacioRefugisClimatics {
 
         try {
             refugis = LlistaRefugis.carregar();
-            refugis.mostrarPrimers(5);
 
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error carregant els refugis: " + e.getMessage());
+            System.err.println("Error carregant els refugis: "
+                    + e.getMessage());
             return;
         }
 
         SwingUtilities.invokeLater(() -> {
+
             VistaRefugis vista = new FinestraRefugisClimatics();
+
             new ControladorRefugis(vista, refugis);
+
             vista.setVisible(true);
         });
     }

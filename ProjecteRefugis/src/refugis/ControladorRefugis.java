@@ -3,8 +3,7 @@ package refugis;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-//Controlador: gestiona lo que sucede cuando pulsamos un botón. Actúa como intermediario entre Vista y Modelo. Modelo busca tal, Vista muestra tal.
+import java.util.UUID;
 
 public class ControladorRefugis {
 
@@ -12,18 +11,56 @@ public class ControladorRefugis {
     private LlistaRefugis modelo;
 
     public ControladorRefugis(VistaRefugis vista, LlistaRefugis modelo) {
+
         this.vista = vista;
         this.modelo = modelo;
+
+        this.vista.addOyenteAlta(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                altaRefugi();
+            }
+        });
 
         this.vista.addOyenteResetear(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resetear();
+                vista.resetearFormulario();
             }
         });
     }
 
-    private void resetear() {
+    private void altaRefugi() {
+
+        String nom = vista.getNom().trim();
+        String municipi = vista.getMunicipi().trim();
+        String tipologia = vista.getTipologia().trim();
+        String adreca = vista.getAdreca().trim();
+        String aigua = vista.getAiguaPotable().trim();
+
+        if (nom.isEmpty() || municipi.isEmpty()) {
+            System.out.println("Cal indicar el nom i el municipi.");
+            return;
+        }
+
+        // Generem un identificador unic per al nou refugi
+        String identificador = "MANUAL-" + UUID.randomUUID();
+
+        RefugiClimatic nouRefugi = new RefugiClimatic(
+            identificador,
+            nom,
+            municipi,
+            tipologia,
+            adreca,
+            aigua
+        );
+
+        modelo.altaRefugiClimatic(nouRefugi);
+
+        System.out.println("Refugi donat d'alta:");
+        System.out.println("Identificador: " + nouRefugi.getIdentificador());
+        System.out.println(nouRefugi);
+
         vista.resetearFormulario();
     }
 }

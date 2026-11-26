@@ -12,8 +12,7 @@ public class GestorRecarrega {
     }
 
     public boolean afegirEstacio(EstacioRecarrega e) {
-        if (e == null || numeroEstacions >= llistaEstacions.length
-                || buscarEstacio(e.getCodi()) != null) {
+        if (e == null || numeroEstacions >= llistaEstacions.length || buscarEstacio(e.getCodi()) != null) {
             return false;
         }
         llistaEstacions[numeroEstacions] = e;
@@ -34,9 +33,11 @@ public class GestorRecarrega {
         return null;
     }
 
-    public EstacioRecarrega buscarEstacioPerPosicio(int j) {
-        if (j < 0 || j >= numeroEstacions) return null;
-        return llistaEstacions[j];
+    public EstacioRecarrega buscarEstacioPerPosicio(int i) {
+        if (i < 0 || i >= numeroEstacions){
+            return null;
+        }
+        return llistaEstacions[i];
     }
 
     public int nombreTotalPuntsOperatius() {
@@ -50,13 +51,17 @@ public class GestorRecarrega {
     // L'ordre correcte dels parametres es: estacio, punt, nou estat.
     public boolean modificaEstat(String idestacio, String idpunt, boolean nouEstat) {
         EstacioRecarrega estacio = buscarEstacio(idestacio);
-        if (estacio == null) return false;
+        if (estacio == null){
+            return false;
+        }
         return estacio.modificaEstat(idpunt, nouEstat);
     }
 
     public double calcularCost(String idestacio, String idpunt, double energiaSolicitada) {
         EstacioRecarrega estacio = buscarEstacio(idestacio);
-        if (estacio == null) return -1.0;
+        if (estacio == null) {
+            return -1.0;
+        }
         return estacio.calcularCost(idpunt, energiaSolicitada);
     }
 

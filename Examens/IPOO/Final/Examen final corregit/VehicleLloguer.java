@@ -6,8 +6,7 @@ public class VehicleLloguer implements ServeiMobilitat {
     private double preuMitjaLloguer;
 
     // Correccio: ingresos i operacions es calculen; no cal duplicar-los com atributs.
-    public VehicleLloguer(String matricula, String model, int numLloguersMensuals,
-            double preuMitjaLloguer) {
+    public VehicleLloguer(String matricula, String model, int numLloguersMensuals, double preuMitjaLloguer) {
         this.matricula = matricula;
         this.model = model;
         this.numLloguersMensuals = numLloguersMensuals;
