@@ -3,7 +3,6 @@ package refugis;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
@@ -140,20 +139,6 @@ public class FinestraRefugisClimatics extends JFrame implements VistaRefugis {
 
         return menuBar;
     }
-
-
-
-    private void addOyentesBotones() {
-
-        botonC.addActionListener(new ActionListener() {  //registra un oyente en el botón Clear!
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resetearFormulario();       //metodo que hará el botón Clear!
-            }
-        });
-    }
-
 
     @Override
     public void addOyenteResetear(ActionListener listener) {
